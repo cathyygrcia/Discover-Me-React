@@ -1,11 +1,11 @@
 import React from "react";
-import Homepage from "./Homepage";
 import "./App.css";
+import Navbar from "./Navbar";
 
 function App() {
   return (
     <div className="bg-gray-600 min-h-screen">
-      <Homepage />
+      <Navbar text="Discover Me" />
     </div>
   );
 }
