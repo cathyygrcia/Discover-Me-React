@@ -2,7 +2,11 @@ export default function Searchbar() {
   return (
     <>
       <label className="flex justify-center mt-8">
-        <input type="text" className="bg-black" placeholder="Search..." />
+        <input
+          type="text"
+          className="bg-black w-2/5 rounded-2xl p-2 text-white outline-none"
+          placeholder="Search..."
+        />
       </label>
       <div className="flex justify-center">
         <button
