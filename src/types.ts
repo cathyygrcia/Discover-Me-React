@@ -1,6 +1,6 @@
 export type ArtistProps = {
   name: string;
-  id: number;
+  id: string;
   images: { url: string }[];
   _embedded: {
     venues: { name: string }[];
