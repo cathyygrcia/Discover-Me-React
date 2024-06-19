@@ -57,22 +57,27 @@ export default function Homepage() {
     <>
       <Navbar text="Discover Me" section="" />
       <Searchbar />
-      <div className="row">
+      <div className="flex justify-center items-center flex-wrap">
         {artists.map((artist) => (
-          <div key={artist.id} className="artist-info">
-            <div className="image-wrapper">
+          <div
+            key={artist.id}
+            className="flex justify-center basis-1/3 flex-col items-center mb-8 text-center"
+          >
+            <div className="w-96 h-72">
               <Link to="Artist">
                 <img
                   src={artist.images[0].url}
                   alt={artist.name}
-                  className="img"
+                  className="h-full w-full"
                 />
               </Link>
             </div>
 
-            <p className="artist-name">{artist.name}</p>
-            <p className="artist-name">{artist._embedded.venues[0].name}</p>
-            <p className="artist-name">
+            <p className="text-white text-base m-0">{artist.name}</p>
+            <p className="text-white text-base m-0">
+              {artist._embedded.venues[0].name}
+            </p>
+            <p className="text-white text-base m-0">
               {formatDate(artist.dates.start.localDate)}
             </p>
           </div>
