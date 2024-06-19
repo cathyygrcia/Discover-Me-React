@@ -9,7 +9,7 @@ function App() {
     <div className="bg-gray-600 min-h-screen">
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/artist/:id" element={<ArtistInfo />} />
+        <Route path="/artist/:artistid" element={<ArtistInfo />} />
       </Routes>
     </div>
   );

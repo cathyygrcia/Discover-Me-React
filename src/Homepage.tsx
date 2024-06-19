@@ -37,6 +37,7 @@ export default function Homepage() {
         );
         if (!res.ok) throw new Error(`Error: ${res.status}`);
         const result = await res.json();
+        console.log(result);
         setArtists(result._embedded.events);
       } catch (error) {
         console.error(error);
@@ -61,7 +62,7 @@ export default function Homepage() {
             className="flex justify-center basis-1/3 flex-col items-center mb-8 text-center"
           >
             <div className="w-96 h-72">
-              <Link to={`/Artist/${artist.id}`}>
+              <Link to={`/Artist/${artist.id}`} state={{ artist }}>
                 <img
                   src={artist.images[0].url}
                   alt={artist.name}
