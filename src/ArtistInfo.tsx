@@ -13,16 +13,48 @@ export function ArtistInfo() {
     <>
       <Navbar text="Discover Me" section="Artist Info" />
       <div className="flex justify-center flex-col items-center mt-12">
-        <h1 className="text-white font-reggae">{artist.name}</h1>
-        <div className="w-2/4 ">
+        <h1 className="text-white font-reggae text-3xl mb-10">{artist.name}</h1>
+        <div className="w-5/12 ">
           <img
             src={artist.images[0].url}
             alt={artist.name}
             className="h-full w-full rounded-3xl"
           />
         </div>
-        <p>{artist._embedded.venues[0].name}</p>
-        <p>{artist.dates.start.localDate}</p>
+        <div className="flex w-5/12 justify-between mt-12">
+          <a
+            className="w-2/6 p-4 text-center font-reggae text-2xl bg-black text-white"
+            href={artist._embedded.attractions[0].externalLinks.facebook[0].url}
+            target="_blank"
+          >
+            Facebook
+          </a>
+          <a
+            className="w-2/6 p-4 text-center font-reggae text-2xl bg-black text-white"
+            href={
+              artist._embedded.attractions[0].externalLinks.instagram[0].url
+            }
+            target="_blank"
+          >
+            Instagram
+          </a>
+        </div>
+        <div className="flex w-5/12 justify-between mt-12">
+          <a
+            className="w-2/6 p-4 text-center font-reggae text-2xl bg-black text-white"
+            href={artist._embedded.attractions[0].externalLinks.youtube[0].url}
+            target="_blank"
+          >
+            Youtube
+          </a>
+          <a
+            className="w-2/6 p-4 text-center font-reggae text-2xl bg-black text-white"
+            href={artist._embedded.attractions[0].externalLinks.spotify[0].url}
+            target="_blank"
+          >
+            Spotify
+          </a>
+        </div>
       </div>
     </>
   );
