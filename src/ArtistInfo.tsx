@@ -20,9 +20,11 @@ export function ArtistInfo() {
             alt={artist.name}
             className="h-full w-full rounded-3xl"
           />
-          <p>
-            <p>Genre: {artist.classifications[0].genre.name}</p>
-          </p>
+          <div className="text-white text-center text-3xl mt-8">
+            <p className="font-reggae">
+              Genre: {artist.classifications[0].genre.name}
+            </p>
+          </div>
         </div>
         <div className="flex w-5/12 justify-between mt-12">
           <a
