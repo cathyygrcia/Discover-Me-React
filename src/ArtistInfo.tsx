@@ -20,17 +20,20 @@ export function ArtistInfo() {
             alt={artist.name}
             className="h-full w-full rounded-3xl"
           />
+          <p>
+            <p>Genre: {artist.classifications[0].genre.name}</p>
+          </p>
         </div>
         <div className="flex w-5/12 justify-between mt-12">
           <a
-            className="w-2/6 p-4 text-center font-reggae text-2xl bg-black text-white"
+            className="w-5/12 p-4 text-center font-reggae text-2xl bg-black text-white"
             href={artist._embedded.attractions[0].externalLinks.facebook[0].url}
             target="_blank"
           >
             Facebook
           </a>
           <a
-            className="w-2/6 p-4 text-center font-reggae text-2xl bg-black text-white"
+            className="w-5/12 p-4 text-center font-reggae text-2xl bg-black text-white"
             href={
               artist._embedded.attractions[0].externalLinks.instagram[0].url
             }
@@ -41,14 +44,14 @@ export function ArtistInfo() {
         </div>
         <div className="flex w-5/12 justify-between mt-12">
           <a
-            className="w-2/6 p-4 text-center font-reggae text-2xl bg-black text-white"
+            className="w-5/12 p-4 text-center font-reggae text-2xl bg-black text-white"
             href={artist._embedded.attractions[0].externalLinks.youtube[0].url}
             target="_blank"
           >
             Youtube
           </a>
           <a
-            className="w-2/6 p-4 text-center font-reggae text-2xl bg-black text-white"
+            className="w-5/12 p-4 text-center font-reggae text-2xl bg-black text-white"
             href={artist._embedded.attractions[0].externalLinks.spotify[0].url}
             target="_blank"
           >
