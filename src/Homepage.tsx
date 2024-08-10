@@ -44,7 +44,7 @@ export default function Homepage() {
       }
     }
     getRandom(randomDMA);
-  }, [randomDMA]);
+  }, []);
 
   function formatDate(inputDate: string) {
     const date = new Date(inputDate);
