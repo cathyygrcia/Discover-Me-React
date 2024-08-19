@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Searchbar from "./Searchbar";
 import "./index.css";
@@ -9,6 +9,25 @@ export default function Homepage() {
   const [artists, setArtists] = useState<ArtistProps[]>([]);
   const [input, setInput] = useState("");
 
+  // Fetch artists for the default genre ("reggae") when the component mounts
+  useEffect(() => {
+    async function fetchDefaultArtists() {
+      try {
+        const res = await fetch(
+          `https://app.ticketmaster.com/discovery/v2/attractions.json?classificationName=reggae&size=30&apikey=aeMvG0zyzdpO1jAkGyCZeGxxQK4vIfpe`
+        );
+        if (!res.ok) throw new Error(`Error: ${res.status}`);
+        const result = await res.json();
+        console.log(result);
+        setArtists(result._embedded?.attractions || []);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    fetchDefaultArtists();
+  }, []); // Empty dependency array to run only on mount
+
   async function handleSearch() {
     try {
       const res = await fetch(
@@ -16,7 +35,8 @@ export default function Homepage() {
       );
       if (!res.ok) throw new Error(`Error: ${res.status}`);
       const result = await res.json();
-      setArtists(result._embedded.attractions || []);
+      console.log(result);
+      setArtists(result._embedded?.attractions || []);
     } catch (error) {
       console.error(error);
     }
@@ -28,7 +48,6 @@ export default function Homepage() {
       <Searchbar
         input={input}
         setInput={setInput}
-        setArtists={setArtists}
         handleSearch={handleSearch}
       />
 
