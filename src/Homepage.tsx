@@ -51,11 +51,11 @@ export default function Homepage() {
         handleSearch={handleSearch}
       />
 
-      <div className="flex justify-center items-center flex-wrap">
+      <div className="flex justify-center items-center flex-wrap ">
         {artists.map((artist) => (
           <div
             key={artist.id}
-            className="flex justify-center basis-1/3 flex-col items-center mb-8 text-center"
+            className="flex justify-center basis-1/2 lg:basis-1/3 flex-col items-center mb-8 text-center"
           >
             <div className="w-96 h-72">
               <Link to={`/Artist/${artist.id}`} state={{ artist }}>
