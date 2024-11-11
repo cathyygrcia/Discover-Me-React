@@ -32,6 +32,18 @@ export function ArtistInfo() {
               Genre: {artist.classifications[0].genre.name}
             </p>
           </div>
+          <div className="sm:flex justify-around mt-4">
+            <div className="flex justify-center mb-3 p-6 border-white border-2 bg-white">
+              <a href={artist.url} target="_blank">
+                Upcoming Events
+              </a>
+            </div>
+            <div className="flex justify-center mb-3 p-6 border-white border-2 bg-white">
+              <a href={artist.url} target="_blank">
+                Upcoming Events
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </>
