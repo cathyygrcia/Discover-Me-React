@@ -32,7 +32,7 @@ export function ArtistInfo() {
               Genre: {artist.classifications[0].genre.name}
             </p>
           </div>
-          <div className="sm:flex justify-around mt-4 ">
+          <div className="sm:flex justify-around mt-4 w-full">
             <div className="flex justify-center mb-3 p-6 border-white border-2 bg-white w-1/4">
               <a href={artist.url} target="_blank" rel="noopener noreferrer">
                 Upcoming Events
