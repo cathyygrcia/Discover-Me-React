@@ -32,16 +32,15 @@ export function ArtistInfo() {
               Genre: {artist.classifications[0].genre.name}
             </p>
           </div>
-          <div className="sm:flex justify-around mt-4">
-            <div className="flex justify-center mb-3 p-6 border-white border-2 bg-white">
+          <div className="sm:flex justify-around mt-4 ">
+            <div className="flex justify-center mb-3 p-6 border-white border-2 bg-white w-1/4">
               <a href={artist.url} target="_blank" rel="noopener noreferrer">
                 Upcoming Events
               </a>
             </div>
 
-            {/* Conditional rendering for the "Discover" link */}
             {artist.externalLinks?.musicbrainz?.[0]?.id ? (
-              <div className="flex justify-center mb-3 p-6 border-white border-2 bg-white">
+              <div className="flex justify-center mb-3 p-6 border-white border-2 bg-white w-1/4">
                 <a
                   href={`https://listenbrainz.org/artist/${artist.externalLinks.musicbrainz[0].id}`}
                   target="_blank"
@@ -51,7 +50,7 @@ export function ArtistInfo() {
                 </a>
               </div>
             ) : (
-              <div className="text-white"></div> // Optional message if no link is found
+              <div className="text-white"></div> //
             )}
           </div>
         </div>
