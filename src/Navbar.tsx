@@ -1,7 +1,8 @@
+import { ReactNode } from "react";
 import { FaRegHeart } from "react-icons/fa";
 
 type Props = {
-  text: string;
+  text: ReactNode;
   section: string;
 };
 export default function Navbar({ text, section }: Props) {

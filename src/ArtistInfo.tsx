@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 
 export function ArtistInfo() {
@@ -11,7 +11,14 @@ export function ArtistInfo() {
 
   return (
     <>
-      <Navbar text="Discover Me" section="Artist Info" />
+      <Navbar
+        text={
+          <Link to="/" className="text-white font-reggae">
+            Discover Me
+          </Link>
+        }
+        section="Artist Info"
+      />
       <div className="flex justify-center flex-col items-center mt-12">
         <h1 className="text-white font-reggae text-3xl mb-10">{artist.name}</h1>
         <div className="w-5/12 ">
