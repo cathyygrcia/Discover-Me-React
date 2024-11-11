@@ -34,15 +34,25 @@ export function ArtistInfo() {
           </div>
           <div className="sm:flex justify-around mt-4">
             <div className="flex justify-center mb-3 p-6 border-white border-2 bg-white">
-              <a href={artist.url} target="_blank">
+              <a href={artist.url} target="_blank" rel="noopener noreferrer">
                 Upcoming Events
               </a>
             </div>
-            <div className="flex justify-center mb-3 p-6 border-white border-2 bg-white">
-              <a href={artist.url} target="_blank">
-                Upcoming Events
-              </a>
-            </div>
+
+            {/* Conditional rendering for the "Discover" link */}
+            {artist.externalLinks?.musicbrainz?.[0]?.id ? (
+              <div className="flex justify-center mb-3 p-6 border-white border-2 bg-white">
+                <a
+                  href={`https://listenbrainz.org/artist/${artist.externalLinks.musicbrainz[0].id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Discover
+                </a>
+              </div>
+            ) : (
+              <div className="text-white"></div> // Optional message if no link is found
+            )}
           </div>
         </div>
       </div>
