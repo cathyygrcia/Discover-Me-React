@@ -55,7 +55,7 @@ export function ArtistInfo() {
                 </a>
               </div>
             ) : (
-              <div className="text-white"></div> //
+              <div className="flex justify-center items-center mb-3 p-6  w-full sm:w-2/5 lg:w-2/5 sm:block hidden"></div>
             )}
           </div>
           <div className="sm:flex flex-row justify-around mt-4 w-full ">
