@@ -33,14 +33,19 @@ export function ArtistInfo() {
             </p>
           </div>
           <div className="sm:flex justify-around mt-4 w-full">
-            <div className="flex justify-center mb-3 p-6 border-white border-2 bg-white w-1/4">
-              <a href={artist.url} target="_blank" rel="noopener noreferrer">
+            <div className="flex justify-center items-center mb-3 p-6 border-white border-2 bg-white w-full sm:w-2/5 lg:w-2/5">
+              <a
+                href={artist.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex text-center"
+              >
                 Upcoming Events
               </a>
             </div>
 
             {artist.externalLinks?.musicbrainz?.[0]?.id ? (
-              <div className="flex justify-center mb-3 p-6 border-white border-2 bg-white w-1/4">
+              <div className="flex justify-center mb-3 p-6 border-white border-2 bg-white w-full sm:w-2/5 lg:w-2/5">
                 <a
                   href={`https://listenbrainz.org/artist/${artist.externalLinks.musicbrainz[0].id}`}
                   target="_blank"
