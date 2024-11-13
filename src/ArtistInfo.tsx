@@ -25,7 +25,7 @@ export function ArtistInfo() {
           <img
             src={artist.images[0].url}
             alt={artist.name}
-            className="h-full w-full rounded-3xl"
+            className="h-full w-full rounded-lg-3xl"
           />
           <div className="text-white text-center text-3xl mt-8">
             <p className="font-reggae">
@@ -33,23 +33,24 @@ export function ArtistInfo() {
             </p>
           </div>
           <div className="sm:flex flex-row justify-around mt-4 w-full">
-            <div className="flex justify-center items-center mb-3 p-6 rounded border-white border-2 bg-white w-full sm:w-2/5 lg:w-2/5">
+            <div className="flex justify-center items-center mb-3 p-6 rounded-lg  bg-white bg-opacity-25 w-full sm:w-2/5 lg:w-2/5">
               <a
                 href={artist.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex text-center"
+                className="flex text-center text-white"
               >
                 Upcoming Events
               </a>
             </div>
 
             {artist.externalLinks?.musicbrainz?.[0]?.id ? (
-              <div className="flex justify-center items-center mb-3 p-6 rounded border-white border-2 bg-white w-full sm:w-2/5 lg:w-2/5">
+              <div className="flex justify-center items-center mb-3 p-6 rounded-lg  bg-white bg-opacity-25 w-full sm:w-2/5 lg:w-2/5">
                 <a
                   href={`https://listenbrainz.org/artist/${artist.externalLinks.musicbrainz[0].id}`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="text-white"
                 >
                   Discover
                 </a>
@@ -59,12 +60,20 @@ export function ArtistInfo() {
             )}
           </div>
           <div className="sm:flex flex-row justify-around mt-4 w-full ">
-            <div className="flex justify-center items-center mb-3 p-6 rounded border-white border-2 bg-white w-full sm:w-2/5 lg:w-2/5">
-              Test
-            </div>
-            <div className="flex justify-center items-center mb-3 p-6 rounded border-white border-2 bg-white w-full sm:w-2/5 lg:w-2/5">
-              Test
-            </div>
+            {artist.externalLinks?.youtube?.[0]?.url ? (
+              <div className="flex justify-center items-center mb-3 p-6 rounded-lg   bg-white bg-opacity-25 w-full sm:w-2/5 lg:w-2/5">
+                <a
+                  href={artist.externalLinks?.youtube?.[0]?.url}
+                  target="_blank"
+                  className="text-white"
+                >
+                  YouTube
+                </a>
+              </div>
+            ) : (
+              <div className="flex justify-center items-center mb-3 p-6  w-full sm:w-2/5 lg:w-2/5 sm:block hidden"></div>
+            )}
+            <div className="flex justify-center items-center mb-3 p-6  w-full sm:w-2/5 lg:w-2/5 sm:block hidden"></div>
           </div>
         </div>
       </div>
